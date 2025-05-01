@@ -16,18 +16,14 @@ import Script from 'next/script';
 
 export default function Home() {
 
-    function compareWord(w1, w2){
+    function compareWord(w1: string, w2: string){
         return new Array(5).fill(0).map((_, i) => (w1[i] == w2[i])? 2:(w2.indexOf(w1[i]) > -1)? 1:0);
-    }
-
-    function ping(){
-        Alert("Hello!");
     }
 
     async function getWord(){
         setTimeout(() => {
                 setWrow1("TEARS");
-            }, "1000");
+            }, 1000);
     }
 
     let [wrow1, setWrow1] = useState("VVVVV");
@@ -36,6 +32,8 @@ export default function Home() {
     let [wrow4, setWrow4] = useState("VVVVV");
     let [wrow5, setWrow5] = useState("VVVVV");
     let [wrow6, setWrow6] = useState("VVVVV");
+
+    console.log(typeof wrow1);
 
 
     return (

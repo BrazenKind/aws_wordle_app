@@ -1,7 +1,11 @@
 import styles from './css/wordle_box.module.css';
 import Wordle_row from './wordle_row.tsx';
 
-export default function Wordle_box({wrows}){
+interface Props{
+    wrows: string[];
+}
+
+export default function Wordle_box({wrows}: any){
 
     const rows = new Array(6).fill(0);
     console.log(wrows);

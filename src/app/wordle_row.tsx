@@ -1,7 +1,7 @@
 import styles from "./css/wordle_row.module.css";
 import { useState } from 'react';
 
-export default function Wordle_row({data}){
+export default function Wordle_row({data}: any){
 
     //const [letters, useLetters] = useState(Array(5).fill("S"));
     //            {data.map((item, index) => <div key={index} className={styles.w}>{item}</div>)}
