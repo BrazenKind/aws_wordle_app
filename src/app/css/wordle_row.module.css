@@ -1,0 +1,11 @@
+.wrow{
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+    grid-gap: 5px;
+}
+
+.w{
+    width: 62px;
+    height: 62px;
+    border: 1px white solid;
+}

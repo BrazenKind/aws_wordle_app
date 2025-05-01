@@ -1,95 +1,51 @@
+'use client'
+import { useState } from 'react';
 import Image from "next/image";
 import styles from "./page.module.css";
+import Wordle_box from "./wordle_box.tsx";
+import Wordle_row from "./wordle_row.tsx";
+import Script from 'next/script';
+
+//you can import CSS class styles and use them in HTML elements!
+//Example:
+// import styles from "./page.module.css";
+// <div className={styles.page}>
+// Where there's a .class element in page.module.css
+
+
 
 export default function Home() {
-  return (
+
+    function compareWord(w1, w2){
+        return new Array(5).fill(0).map((_, i) => (w1[i] == w2[i])? 2:(w2.indexOf(w1[i]) > -1)? 1:0);
+    }
+
+    function ping(){
+        Alert("Hello!");
+    }
+
+    async function getWord(){
+        setTimeout(() => {
+                setWrow1("TEARS");
+            }, "1000");
+    }
+
+    let [wrow1, setWrow1] = useState("VVVVV");
+    let [wrow2, setWrow2] = useState("VVVVV");
+    let [wrow3, setWrow3] = useState("VVVVV");
+    let [wrow4, setWrow4] = useState("VVVVV");
+    let [wrow5, setWrow5] = useState("VVVVV");
+    let [wrow6, setWrow6] = useState("VVVVV");
+
+
+    return (
     <div className={styles.page}>
       <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>src/app/page.tsx</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
 
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
-        </div>
+        <Wordle_box wrows={[wrow1, wrow2, wrow3, wrow4, wrow5, wrow6]}></Wordle_box>
+        <button onClick={getWord}>Getword</button>
+
       </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
     </div>
-  );
+    );
 }
