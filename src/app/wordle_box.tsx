@@ -1,13 +1,14 @@
 'use client'
 import styles from './css/wordle_box.module.css';
 import Wordle_row from './wordle_row.tsx';
+import Word_setter from './word_setter.tsx';
 import { useState } from 'react';
 
 interface Props{
     wrows: string[];
 }
 
-export default function Wordle_box(){
+export default function Wordle_box({wordData}: any){
 
     const rows = new Array(6).fill(0);
 
@@ -19,7 +20,10 @@ export default function Wordle_box(){
     let [wrow6, setWrow6] = useState("");
     let wrows = [wrow1, wrow2, wrow3, wrow4, wrow5, wrow6];
 
-    let [secret, useSecret] = useState("OPENS");
+    let [secret, setSecret] = useState("OPENS");
+    const setSecret_child = (secret) => {
+        setSecret(secret);
+    };
     const url = "https://d6efzmgcn7.execute-api.us-east-2.amazonaws.com/test-1_5/";
 
     async function getWord(){
@@ -56,19 +60,14 @@ export default function Wordle_box(){
         } catch(e){
             console.log(e);
         }
-
-//
-//         setTimeout(() => {
-//             setWrow1("TEARS");
-//         }, 1000);
     }
 
-    
 
     return(
          <div className={styles.box}>
             {wrows.map((_, i) => <Wordle_row key={i} data={wrows[i]}></Wordle_row>)}
             <button onClick={getWord}>Getword</button>
+            <Word_setter wordData={wordData}></Word_setter>
          </div>
     );
 }
