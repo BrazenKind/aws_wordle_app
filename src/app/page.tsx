@@ -16,7 +16,7 @@ import { promises as fs } from 'fs';
 export default async function Home() {
 
     async function readWords(){
-        const filePath = path.join(process.cwd(), 'public', 'word_data\\wordle_words.txt');
+        const filePath = path.join(process.cwd(), 'public', 'word_data/wordle_words.txt');
         const wordData = await fs.readFile(filePath, 'utf8');
         return wordData.split('\r\n');
     }

@@ -1,6 +1,5 @@
 import styles from './css/word_setter.module.css';
 import { FixedSizeList as List } from 'react-window';
-import { use } from "react";
 
 export default function Word_setter({wordData}: any){
     const row = ({index, style}) => (
