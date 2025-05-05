@@ -3,7 +3,7 @@ import { FixedSizeList as List } from 'react-window';
 
 export default function Word_setter({wordData}: any){
     const row = ({index, style}) => (
-        <div style={style}> {wordData[index]} </div>
+        <div className = {styles.listItem} style={style}> {wordData[index]} </div>
     );
 
     return(
