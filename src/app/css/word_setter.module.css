@@ -2,4 +2,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex: 1 0 90%;
+}
+
+.list{
+    display: flex;
+    flex-wrap: wrap;
 }
