@@ -38,7 +38,6 @@ export default function Wordle_box({wordData}: any){
 
     async function getWord(){
         try{
-
             setIsLoading(true);
             const response = await fetch(url, {method: "POST", body: JSON.stringify({secret: secret})});
             console.log(JSON.stringify({secret: secret}));
@@ -76,6 +75,7 @@ export default function Wordle_box({wordData}: any){
 
         } catch(e){
             console.log(e);
+            setIsLoading(false);
         }
     }
 
