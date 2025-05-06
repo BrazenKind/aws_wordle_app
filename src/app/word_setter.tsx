@@ -33,11 +33,11 @@ export default function Word_setter({wordData, secretSetter}){
     const scrollMenuWidth = 200;
 
     return(
-        <div style={{width: 150}}>
-            <List height={150} itemCount = {wordEntries.length} itemSize={35} width={scrollMenuWidth}>
+        <div className={styles.menuWidth}>
+            <List className={styles.menuWidth} height={150} itemCount = {wordEntries.length} itemSize={35}>
                 {row}
             </List>
-            <input onChange={handleFilter} style={{width: scrollMenuWidth}} placeholder="Search for words to guess..."></input>
+            <input className={styles.menuWidth} onChange={handleFilter} placeholder="Search for words to guess..."></input>
         </div>
     );
 }

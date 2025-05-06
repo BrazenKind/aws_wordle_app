@@ -14,3 +14,13 @@
     display: flex;
     flex-wrap: wrap;
 }
+
+.menuWidth {
+    width: 200px;
+}
+
+@media (max-width: 600px) {
+    .menuWidth {
+        width: 110px;
+    }
+}
