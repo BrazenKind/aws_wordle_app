@@ -38,7 +38,6 @@ export default function Word_setter({wordData, secretSetter}){
                 {row}
             </List>
             <input onChange={handleFilter} style={{width: scrollMenuWidth}} placeholder="Search for words to guess..."></input>
-            <div>{filter}</div>
         </div>
     );
 }
