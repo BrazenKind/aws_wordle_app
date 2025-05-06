@@ -5,6 +5,10 @@
     flex: 1 0 90%;
 }
 
+.hidden{
+    display: none;
+}
+
 .list{
     display: flex;
     flex-wrap: wrap;
