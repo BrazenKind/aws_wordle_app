@@ -25,7 +25,10 @@ export default async function Home() {
 
     return (
     <div className={styles.page}>
+        <div style={{textAlign: 'center', fontSize:'35px', fontWeight:'bold'}}> Automatic Wordle Solver </div>
+
       <main className={styles.main}>
+        <div style={{textAlign: 'center', fontSize:'15px'}}> Trained on ~1,300 words using a decision tree model </div>
         <Wordle_box wordData={wordData}></Wordle_box>
       </main>
     </div>

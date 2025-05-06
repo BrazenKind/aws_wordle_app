@@ -89,7 +89,7 @@ export default function Wordle_box({wordData}: any){
                 <div className={styles.scrollBoxRightHalf}>
                     <div style={{textAlign:'center', paddingBottom:'2px'}}> Current word to guess:</div>
                     <div style={{textAlign:'center', paddingBottom:'5px', fontWeight:'bold'}}>{secret}</div>
-                    <button disabled={isLoading} className={isLoading?styles.loader:styles.placeholder} style={{width: '75px', height: '30px', fontWeight:'bold'}}onClick={getWord}>{isLoading?'':'Getword'}</button>
+                    <button disabled={isLoading} className={isLoading?styles.loader:styles.placeholder} style={{width: '90px', height: '30px', fontWeight:'bold'}}onClick={getWord}>{isLoading?'':'Guess word'}</button>
                 </div>
             </div>
 
