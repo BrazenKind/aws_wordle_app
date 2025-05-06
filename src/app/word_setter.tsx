@@ -13,7 +13,7 @@ export default function Word_setter({wordData, secretSetter}){
 
     const handleFilter = (event) => {
         setFilter(event.target.value.toUpperCase());
-        setWordEntries(originalWordData.filter(item => item.includes(filter)));
+        setWordEntries(originalWordData.filter(item => item.includes(event.target.value.toUpperCase())));
     };
 
     let [filter, setFilter] = useState("");
