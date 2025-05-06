@@ -5,8 +5,9 @@
     flex: 1 0 90%;
 }
 
-.hidden{
-    display: none;
+.listItem:hover{
+    cursor: pointer;
+    background: RGB(81, 82, 81, 0.5);
 }
 
 .list{

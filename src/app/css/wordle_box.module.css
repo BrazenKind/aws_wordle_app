@@ -5,3 +5,29 @@
     padding: 10px;
     box-sizing: border-box;
 }
+
+.scrollBoxRightHalf{
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    width: 120px;
+    background: #7e9979;
+    border-radius: 7px;
+}
+
+.placeholder{
+}
+
+.loader {
+  width: 90px;
+  height: 14px;
+  background: radial-gradient(circle closest-side,#555 92%,#0000) calc(100%/3) 0/calc(100%/4) 100%;
+  animation: l2 0.5s infinite linear;
+}
+@keyframes l2 {
+    100% {background-position: 0 0}
+}
+
+
